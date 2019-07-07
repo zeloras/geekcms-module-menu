@@ -6,7 +6,7 @@
     "active": 1,
     "order": 0,
     "providers": [
-        "Modules\\Menu\\Providers\\InitServiceProvider"
+        "GeekCms\\Menu\\Providers\\InitServiceProvider"
     ],
     "aliases": {},
     "files": [
@@ -14,7 +14,7 @@
     ],
     "requires": [
         "GeekCms\\PackagesManager",
-        "Modules\\Pages"
+        "GeekCms\\Pages"
     ],
     "access_permissions": [
         {
