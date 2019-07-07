@@ -1,10 +1,10 @@
 <?php
 
-namespace Modules\Menu\Database\Seeders;
+namespace GeekCms\Menu\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Modules\Menu\Models\Item;
-use Modules\Menu\Models\Menu;
+use GeekCms\Menu\Models\Item;
+use GeekCms\Menu\Models\Menu;
 
 class MenuDatabaseSeeder extends Seeder
 {

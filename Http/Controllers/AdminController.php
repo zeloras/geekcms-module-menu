@@ -1,12 +1,12 @@
 <?php
 
-namespace Modules\Menu\Http\Controllers;
+namespace GeekCms\Menu\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Modules\Menu\Models\Item;
-use Modules\Menu\Models\Menu;
-use Modules\Pages\Models\Page;
+use GeekCms\Menu\Models\Item;
+use GeekCms\Menu\Models\Menu;
+use GeekCms\Pages\Models\Page;
 
 class AdminController extends Controller
 {

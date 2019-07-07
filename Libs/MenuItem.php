@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Menu\Libs;
+namespace GeekCms\Menu\Libs;
 
 use Nwidart\Menus\MenuItem as MainMenuItem;
 

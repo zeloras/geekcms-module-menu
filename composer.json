@@ -25,7 +25,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Modules\\Menu\\Providers\\InitServiceProvider"
+                "GeekCms\\Menu\\Providers\\InitServiceProvider"
             ],
             "aliases": {
                 
@@ -34,7 +34,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Modules\\Menu\\": ""
+            "GeekCms\\Menu\\": ""
         }
     }
 }

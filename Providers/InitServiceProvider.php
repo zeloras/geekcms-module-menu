@@ -1,11 +1,11 @@
 <?php
 
-namespace Modules\Menu\Providers;
+namespace GeekCms\Menu\Providers;
 
 use GeekCms\PackagesManager\Support\ServiceProvider as MainServiceProvider;
 use Illuminate\Support\Facades\Blade;
-use Modules\Menu\Libs\Facade;
-use Modules\Menu\Libs\MenuBuilder;
+use GeekCms\Menu\Libs\Facade;
+use GeekCms\Menu\Libs\MenuBuilder;
 
 /**
  * Class InitServiceProvider.

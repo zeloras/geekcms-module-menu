@@ -1,8 +1,8 @@
 <?php
 
-namespace Modules\Menu\Libs\Admin;
+namespace GeekCms\Menu\Libs\Admin;
 
-use Modules\Menu\Libs\MenuItem;
+use GeekCms\Menu\Libs\MenuItem;
 use Nwidart\Menus\Presenters\Presenter;
 
 class AdminSidenav extends Presenter

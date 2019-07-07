@@ -3,7 +3,7 @@
 return [
     'FacadeName' => [
         'alias' => 'MenuBuilder',
-        'facadePath' => 'Modules\Menu\Libs\Facade',
-        'mainRepoPath' => 'Modules\Menu\Libs\MenuBuilder',
+        'facadePath' => 'GeekCms\Menu\Libs\Facade',
+        'mainRepoPath' => 'GeekCms\Menu\Libs\MenuBuilder',
     ],
 ];

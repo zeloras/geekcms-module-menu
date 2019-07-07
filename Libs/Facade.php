@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Menu\Libs;
+namespace GeekCms\Menu\Libs;
 
 class Facade extends \Illuminate\Support\Facades\Facade
 {

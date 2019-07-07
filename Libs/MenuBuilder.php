@@ -1,8 +1,8 @@
 <?php
 
-namespace Modules\Menu\Libs;
+namespace GeekCms\Menu\Libs;
 
-use Modules\Menu\Models\Menu;
+use GeekCms\Menu\Models\Menu;
 
 class MenuBuilder
 {
