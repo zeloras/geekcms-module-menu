@@ -1,0 +1,12 @@
+.dd-actions{
+    position: absolute;
+    height: 100%;
+    right: 0;
+    top: 0;
+    z-index: 9;
+}
+
+.dd-handle-selected {
+    color: #2ea8e5;
+    background: #fff;
+}

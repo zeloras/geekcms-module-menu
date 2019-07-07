@@ -1,0 +1,27 @@
+<?php
+
+return [
+    'page_title' => 'Меню',
+    'navigation_choose' => 'Выбор навигации',
+    'create_navigation' => 'Создать навигацию',
+    'delete_selected_navigation' => 'Удалить выбранные элементы',
+    'create_button' => 'Создать',
+    'save_button' => 'Сохранить',
+    'title' => 'Заголовок',
+    'link_type' => 'Тип ссылки',
+    'direct_link' => 'Прямая ссылка',
+    'link' => 'Ссылка',
+    'anchor' => 'Якорь',
+    'page' => 'Страница',
+    'change_button' => 'Изменить',
+    'navigation_delete' => 'Удалить навигацию',
+    'will_be_removed' => 'Данные навигации будут удалены! Продолжить?',
+    'name' => 'Название',
+    'language' => 'Язык',
+    'elements_cnt' => 'Кол-во элементов',
+    'created_at' => 'Дата создания',
+    'menu_list' => 'Список меню',
+    'route_link' => 'Системная ссылка',
+    'navigation_create' => 'Добавить новый эллемент меню',
+    'parent_item' => 'Родительский элемент',
+];
