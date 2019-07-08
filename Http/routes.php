@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['middleware' => ['web', 'permission:admin_access'], 'prefix' => getAdminPrefix('menu')], function () {
+Route::group(['middleware' => ['web', 'permission:' . \Gcms::MAIN_ADMIN_PERMISSION], 'prefix' => getAdminPrefix('menu')], function () {
     Route::group(['middleware' => ['permission:modules_menu_admin_create']], function () {
         Route::any('/create', 'GeekCms\Menu\Http\Controllers\AdminController@createMenu')
             ->name('admin.menu.create')
