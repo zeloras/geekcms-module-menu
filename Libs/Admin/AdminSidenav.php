@@ -49,8 +49,8 @@ class AdminSidenav extends Presenter
         $request_real = (string) \Request::getRequestUri();
         $match = preg_match('@'.$request_item.'@ius', $request_real);
         if ($match) {
-            $request_item_cnt = \count(explode('/', $request_item));
-            $request_real_cnt = \count(explode('/', $request_real)) - 1;
+            $request_item_cnt = \count(explode(DIRECTORY_SEPARATOR, $request_item));
+            $request_real_cnt = \count(explode(DIRECTORY_SEPARATOR, $request_real)) - 1;
             if ($request_real_cnt === $request_item_cnt || $request_item_cnt > 1 && $request_real_cnt >= $request_item_cnt) {
                 $match = true;
             } else {
