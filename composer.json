@@ -36,5 +36,7 @@
         "psr-4": {
             "GeekCms\\Menu\\": ""
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
