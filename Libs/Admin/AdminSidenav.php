@@ -4,6 +4,9 @@ namespace GeekCms\Menu\Libs\Admin;
 
 use GeekCms\Menu\Libs\MenuItem;
 use Nwidart\Menus\Presenters\Presenter;
+use Request;
+use Translate;
+use function count;
 
 class AdminSidenav extends Presenter
 {
@@ -32,10 +35,10 @@ class AdminSidenav extends Presenter
         $is_active = $this->getActiveState($item);
 
         return '
-        <li class="purple '.$is_active.'">
-            <a href="'.$item->getUrl().'">
-                '.$item->getIcon($is_active).'
-                <span class="lbl">'.\Translate::get($item->title).'</span>
+        <li class="purple ' . $is_active . '">
+            <a href="' . $item->getUrl() . '">
+                ' . $item->getIcon($is_active) . '
+                <span class="lbl">' . Translate::get($item->title) . '</span>
             </a>
         </li>';
     }
@@ -45,12 +48,12 @@ class AdminSidenav extends Presenter
      */
     public function getActiveState($item)
     {
-        $request_item = (string) $item->getRequest();
-        $request_real = (string) \Request::getRequestUri();
-        $match = preg_match('@'.$request_item.'@ius', $request_real);
+        $request_item = (string)$item->getRequest();
+        $request_real = (string)Request::getRequestUri();
+        $match = preg_match('@' . $request_item . '@ius', $request_real);
         if ($match) {
-            $request_item_cnt = \count(explode(DIRECTORY_SEPARATOR, $request_item));
-            $request_real_cnt = \count(explode(DIRECTORY_SEPARATOR, $request_real)) - 1;
+            $request_item_cnt = count(explode(DIRECTORY_SEPARATOR, $request_item));
+            $request_real_cnt = count(explode(DIRECTORY_SEPARATOR, $request_real)) - 1;
             if ($request_real_cnt === $request_item_cnt || $request_item_cnt > 1 && $request_real_cnt >= $request_item_cnt) {
                 $match = true;
             } else {
@@ -87,14 +90,14 @@ class AdminSidenav extends Presenter
         $item_custom = MenuItem::make($item->getProperties());
 
         return '
-        <li class="purple with-sub '.$active.'">
+        <li class="purple with-sub ' . $active . '">
 	            <span>
-	                '.$item_custom->getIcon($active).'
-	                <span class="lbl">'.\Translate::get($item_custom->title).'</span>
+	                ' . $item_custom->getIcon($active) . '
+	                <span class="lbl">' . Translate::get($item_custom->title) . '</span>
 	            </span>
             <ul>
-                '.$this->getChildMenuItems($item).'
+                ' . $this->getChildMenuItems($item) . '
             </ul>
-        </li>'.PHP_EOL;
+        </li>' . PHP_EOL;
     }
 }

@@ -3,6 +3,7 @@
 namespace GeekCms\Menu\Libs;
 
 use Nwidart\Menus\MenuItem as MainMenuItem;
+use function is_array;
 
 /**
  * @property string url
@@ -22,13 +23,13 @@ class MenuItem extends MainMenuItem
      */
     public function getIcon($default = null)
     {
-        if (null !== $this->icon && '' !== $this->icon && !\is_array($this->icon)) {
+        if (null !== $this->icon && '' !== $this->icon && !is_array($this->icon)) {
             $additional_class = (empty($default)) ? '' : 'active';
 
-            return '<i class="'.$this->icon.' '.$additional_class.'"></i>';
+            return '<i class="' . $this->icon . ' ' . $additional_class . '"></i>';
         }
 
-        if (\is_array($this->icon) && isset($this->icon['svg']) && null !== $this->icon['svg']) {
+        if (is_array($this->icon) && isset($this->icon['svg']) && null !== $this->icon['svg']) {
             return $this->icon['svg'];
         }
 
@@ -36,6 +37,6 @@ class MenuItem extends MainMenuItem
             return $default;
         }
 
-        return '<i class="'.$default.'"></i>';
+        return '<i class="' . $default . '"></i>';
     }
 }

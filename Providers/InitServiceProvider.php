@@ -2,10 +2,10 @@
 
 namespace GeekCms\Menu\Providers;
 
-use GeekCms\PackagesManager\Support\ServiceProvider as MainServiceProvider;
-use Illuminate\Support\Facades\Blade;
 use GeekCms\Menu\Libs\Facade;
 use GeekCms\Menu\Libs\MenuBuilder;
+use GeekCms\PackagesManager\Support\ServiceProvider as MainServiceProvider;
+use Illuminate\Support\Facades\Blade;
 
 /**
  * Class InitServiceProvider.

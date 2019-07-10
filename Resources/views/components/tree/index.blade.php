@@ -28,14 +28,16 @@
             <div class="form-group text-center">
                 @if (!empty($item_detail))
                     <a href="{{ route('admin.menu', ['menu' => $menu->id]) }}" class="btn btn-success">
-                        {{ \Translate::get('module_menu::admin/main.navigation_create') }}
+                        {{ Translate::get('module_menu::admin/main.navigation_create') }}
                     </a>
                 @endif
 
-                <button id="menuSave" class="btn btn-primary">{{ \Translate::get('module_menu::admin/main.save_button') }}</button>
+                <button id="menuSave"
+                        class="btn btn-primary">{{ Translate::get('module_menu::admin/main.save_button') }}</button>
 
-                <a href="{{ route('admin.menu.delete', ['menu' => $menu->id]) }}" class="btn btn-danger" data-delete="{{ \Translate::get('module_menu::admin/main.will_be_removed') }}">
-                    {{ \Translate::get('module_menu::admin/main.navigation_delete') }}
+                <a href="{{ route('admin.menu.delete', ['menu' => $menu->id]) }}" class="btn btn-danger"
+                   data-delete="{{ Translate::get('module_menu::admin/main.will_be_removed') }}">
+                    {{ Translate::get('module_menu::admin/main.navigation_delete') }}
                 </a>
             </div>
         </div>

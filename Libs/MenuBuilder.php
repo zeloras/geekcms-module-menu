@@ -3,11 +3,12 @@
 namespace GeekCms\Menu\Libs;
 
 use GeekCms\Menu\Models\Menu;
+use Illuminate\Support\Collection;
 
 class MenuBuilder
 {
     /**
-     * @var \Illuminate\Support\Collection
+     * @var Collection
      */
     protected $storage;
 
@@ -37,18 +38,29 @@ class MenuBuilder
         $this->load();
 
         // default
-        $this->default = (object) [
+        $this->default = (object)[
             'items' => [],
         ];
     }
 
     /**
+     * Load menu with items to storage.
+     */
+    protected function load()
+    {
+        if (!$this->_isLoad) {
+            $this->storage = Menu::all();
+            $this->_isLoad = true;
+        }
+    }
+
+    /**
      * Get menu by name.
      *
-     * @param string      $name
+     * @param string $name
      * @param null|string $lang
      *
-     * @return null|Menu
+     * @return Menu|object|null
      */
     public function get($name, $lang = null)
     {
@@ -57,8 +69,7 @@ class MenuBuilder
         $this->menu = $this->storage
             ->where('lang', '=', $lang)
             ->where('name', '=', $name)
-            ->first()
-        ;
+            ->first();
 
         return $this->menu ?? $this->default;
     }
@@ -66,7 +77,7 @@ class MenuBuilder
     /**
      * Get all menus.
      *
-     * @return \Illuminate\Support\Collection
+     * @return Collection
      */
     public function getList()
     {
@@ -84,16 +95,5 @@ class MenuBuilder
         $this->load();
 
         return $this;
-    }
-
-    /**
-     * Load menu with items to storage.
-     */
-    protected function load()
-    {
-        if (!$this->_isLoad) {
-            $this->storage = Menu::all();
-            $this->_isLoad = true;
-        }
     }
 }

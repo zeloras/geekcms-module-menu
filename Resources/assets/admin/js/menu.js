@@ -110,7 +110,7 @@ var moduleMenuAdmin = {
      * @param help
      * @param data
      */
-    setData: function (action, help, data){
+    setData: function (action, help, data) {
         action.val(data);
         help.html(data);
     }

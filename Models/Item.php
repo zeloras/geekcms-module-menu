@@ -3,6 +3,10 @@
 namespace GeekCms\Menu\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use function count;
+use function is_array;
 
 class Item extends Model
 {
@@ -36,7 +40,7 @@ class Item extends Model
     /**
      * Навигация.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function menu()
     {
@@ -46,7 +50,7 @@ class Item extends Model
     /**
      * Родительский элемент
      *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function parent()
     {
@@ -56,13 +60,12 @@ class Item extends Model
     /**
      * Вложенные эелементы.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function items()
     {
         return $this->hasMany(self::class, 'item_id')
-            ->orderBy('position')
-        ;
+            ->orderBy('position');
     }
 
     /**
@@ -77,7 +80,7 @@ class Item extends Model
             $action = 'anhor::#';
         }
 
-        if (!\is_array($action)) {
+        if (!is_array($action)) {
             $routeRexex = '/(?:(?<class>.*)\::(?<method>[^|\n]+)(?:\||\n|$)+)?(?:(?<key>[^\|\;\=]+)\=(?<value>[^\|\;\n]+))?/';
 
             preg_match_all($routeRexex, $action, $actionMatch, PREG_SET_ORDER);
@@ -96,7 +99,7 @@ class Item extends Model
                 }
             }
 
-            if (\count($params)) {
+            if (count($params)) {
                 $action['params'] = $params;
             }
         }

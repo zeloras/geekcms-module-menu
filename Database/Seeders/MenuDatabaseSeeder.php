@@ -2,9 +2,9 @@
 
 namespace GeekCms\Menu\Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use GeekCms\Menu\Models\Item;
 use GeekCms\Menu\Models\Menu;
+use Illuminate\Database\Seeder;
 
 class MenuDatabaseSeeder extends Seeder
 {

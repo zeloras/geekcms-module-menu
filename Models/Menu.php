@@ -3,6 +3,7 @@
 namespace GeekCms\Menu\Models;
 
 use App\Models\MainModel;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Menu extends MainModel
 {
@@ -21,25 +22,23 @@ class Menu extends MainModel
     /**
      * Все эелементы навигации текущего меню.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function items()
     {
         return $this->hasMany(Item::class, 'menu_id', 'id')
             ->orderBy('position')
-            ->whereNull('item_id')
-        ;
+            ->whereNull('item_id');
     }
 
     /**
      * All items.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function allItems()
     {
         return $this->hasMany(Item::class, 'menu_id', 'id')
-            ->orderBy('position')
-        ;
+            ->orderBy('position');
     }
 }
