@@ -15,7 +15,7 @@ class InitServiceProvider extends MainServiceProvider
     /**
      * {@inheritdoc}
      */
-    public function boot()
+    public function boot(): void
     {
         parent::boot();
         $this->app->instance(\MenuBuilder::class, function () {
@@ -28,7 +28,7 @@ class InitServiceProvider extends MainServiceProvider
     /**
      * {@inheritdoc}
      */
-    public function registerBladeDirective()
+    public function registerBladeDirective(): void
     {
         Blade::directive($this->name, function ($arguments) {
             list($name, $layout) = explode(',', str_replace(['(', ')', ' ', "'"], '', $arguments));
