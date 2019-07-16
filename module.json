@@ -14,7 +14,7 @@
   ],
   "requires": [
     "GeekCms\\PackagesManager",
-    "GeekCms\\Pages"
+    "GeekCms\\Translates"
   ],
   "access_permissions": [
     {
