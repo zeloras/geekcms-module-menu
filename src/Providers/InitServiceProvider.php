@@ -12,17 +12,21 @@ use Illuminate\Support\Facades\Blade;
  */
 class InitServiceProvider extends MainServiceProvider
 {
+
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      */
     public function boot(): void
     {
         parent::boot();
-        $this->app->instance(\MenuBuilder::class, function () {
-            return new MenuBuilder();
-        });
 
-        class_alias(Facade::class, 'MenuBuilder');
+        if (\Gcms::checkDBConnection()) {
+            $this->app->instance(\MenuBuilder::class, function () {
+                return new MenuBuilder();
+            });
+
+            class_alias(Facade::class, 'MenuBuilder');
+        }
     }
 
     /**
